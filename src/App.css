@@ -63,3 +63,15 @@
   align-items: right;
   text-align: right;
 }
+
+.flex{
+  margin-right: 2%;
+  margin-left: 2%;
+  /* display: flex;  
+  flex-wrap: wrap;
+  gap: 2% 5%; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 50px;
+  
+}

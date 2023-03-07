@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import axios from "axios";
 import { API } from "../global";
-// import { render } from "@testing-library/react";
+import UserContext from '../context/UserContext';
 
 
 const formvali=Yup.object({
@@ -19,6 +19,9 @@ const formvali=Yup.object({
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [done,setDone]=useState("");
+  const auth = useContext(UserContext);
+  
+ 
   const navi= useNavigate();
     const {values,errors,handleBlur,handleChange,handleSubmit}= useFormik({
         initialValues:{email:"", password:""},
@@ -48,6 +51,12 @@ export default function Login() {
                   setDone(response.data.message);
                   // to be changed
                   // navi("/shorturl",);
+                  // auth2.login2(userdetail.email);
+                  // navi("/profile");
+                  // auth.login(values.email);
+                  // console.log(values.email);
+                  auth.handleLogin(values.email);
+
                   navi("/afterlogin");
 
                   
@@ -67,6 +76,7 @@ export default function Login() {
   // const navigate = useNavigate();
   return (
     <div>
+{/* <AuthProvider> */}
       <h1>User Login</h1>
       {loading?<h1>Please wait...</h1>:
        <div> <form onSubmit={handleSubmit}>
@@ -106,7 +116,7 @@ export default function Login() {
      <p><a href="/register">Do you want to Register?</a></p>
      <h1>{done}</h1></div>
       }
-      
+      {/* </AuthProvider> */}
       
       
       
