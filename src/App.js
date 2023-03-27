@@ -64,12 +64,14 @@ function App() {
         <Route path="/checkmail" element={<Checkmail />} />
         
 {/* This is protected route link */}
-        <Route path="/dashboard" element={<ProtectedRoute cmp="Dashboard" />} />
+        {/* <Route path="/dashboard" element={<ProtectedRoute cmp="Dashboard" />} /> */}
        
-        <Route path="/shorturl" element={<ProtectedRoute cmp="Shorturl" />}  />
+        {/* <Route path="/shorturl" element={<ProtectedRoute cmp="Shorturl" />}  /> */}
         <Route path="/afterlogin" element={<ProtectedRoute cmp="Afterlogin" />} />
         <Route path="/profile" element={<ProtectedRoute cmp= "Profile" />} />
         <Route path="/myacccount" element={<ProtectedRoute cmp= "MyAccount" />} />
+        <Route path="/myaccount/addfbuser" element={<ProtectedRoute cmp= "AddFBUser" />} />
+        <Route path="/myaccount/addfbpage" element={<ProtectedRoute cmp= "AddFBPage" />} />
          <Route path="*" element={<Notfound />} />
       </Routes>
 

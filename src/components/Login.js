@@ -49,13 +49,8 @@ export default function Login() {
                   sessionStorage.setItem('jwttoken', response.data.jwttoken); //saving token
                   console.log(response.data.jwttoken)//pushes back the user after storing token
                   setDone(response.data.message);
-                  // to be changed
-                  // navi("/shorturl",);
-                  // auth2.login2(userdetail.email);
-                  // navi("/profile");
-                  // auth.login(values.email);
-                  // console.log(values.email);
-                  auth.handleLogin(values.email);
+                  console.log(response.data);
+                  auth.handleLogin(response.data.username,response.data.email);
 
                   navi("/afterlogin");
 

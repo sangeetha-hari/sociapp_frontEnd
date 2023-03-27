@@ -3,17 +3,20 @@ import UserContext from './UserContext';
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [email,setEmail]= useState(null);
 
-  const handleLogin = (userData) => {
-    setUser(userData);
+  const handleLogin = (userData,email) => {
+    setUser(userData)
+    setEmail(email);
   };
 
   const handleLogout = () => {
     setUser(null);
+    setEmail(null)
   };
 
   return (
-    <UserContext.Provider value={{ user, handleLogin, handleLogout }}>
+    <UserContext.Provider value={{user, email, handleLogin, handleLogout }}>
       {children}
     </UserContext.Provider>
   );

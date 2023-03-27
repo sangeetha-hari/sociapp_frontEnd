@@ -5,11 +5,20 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
 
 export default function MyAccount() {
-
+  const navi= useNavigate();
 const handleaddinsta=()=>{
     console.log("This is add insta")
+}
+const handleAddFBuser=()=>{
+  console.log("handle Add FB")
+  navi("/myaccount/addfbuser")
+}
+const handleAddFBPage=()=>{
+  console.log("handle Add FB page")
+  navi("/myaccount/addfbpage")
 }
 
   return (
@@ -35,8 +44,8 @@ const handleaddinsta=()=>{
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">ADD</Button>
-              <Button size="small">UPDATE</Button>
+              <Button size="small"  onClick={handleAddFBuser}>ADD User</Button>
+              <Button size="small" onClick={handleAddFBPage}>ADD Page</Button>
             </CardActions>
           </Card>
         </div>

@@ -75,3 +75,16 @@
   gap: 50px 50px;
   
 }
+
+.left{
+  margin-right: 100px;
+  row-gap: 5%;
+  padding: 2%;
+}
+
+.rowflex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px 50px;
+}

@@ -21,7 +21,7 @@ export default function Dashboard(){
     const [recurl,setRecurl]=useState([]);
     useEffect(()=>{
       setLoading(true);
-        axios.get(`${API}/shorturl/dashboard`,{ responseType: "json"})
+        axios.get(`${API}//dashboard`,{ responseType: "json"})
         .then((res)=>{
              console.log(res.data[0]); 
              res.data.forEach(element => {recurl.push(element);
